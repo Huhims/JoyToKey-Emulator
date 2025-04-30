@@ -19876,9 +19876,9 @@ def save_file():
                "**Button12 C4 = " + js2_C4_Button12.get() + "\n" +
                "**Button12 C5 = " + js2_C5_Button12.get() + "\n" +
                "#joystick 2:Mouse" + "\n" +
-               "Stick1 speed = " + str(j1_stick1_speed.get()) + "\n" +
-               "Stick2 speed = " + str(j1_stick2_speed.get()) + "\n" +
-               "POV = " + str(j1_POV_speed.get()) + "\n" +
+               "Stick1 speed = " + str(j2_stick1_speed.get()) + "\n" +
+               "Stick2 speed = " + str(j2_stick2_speed.get()) + "\n" +
+               "POV = " + str(j2_POV_speed.get()) + "\n" +
                "Button1: Mouse Left click = " + str(js2_Left_MB1.get()) + "\n" +
                "Button1: Mouse Middle click = " + str(js2_Mid_MB1.get()) + "\n" +
                "Button1: Mouse Right click = " + str(js2_Right_MB1.get()) + "\n" +
@@ -26028,6 +26028,23 @@ if not platform.system() == "Darwin":
     cbox.bind('<ButtonPress>', CloseMENU)
     info_lb.bind('<ButtonPress>', CloseMENU)
     prof_lb.bind('<ButtonPress>', CloseMENU)
+    label1.bind('<ButtonPress>', CloseMENU)
+    label2.bind('<ButtonPress>', CloseMENU)
+    label3.bind('<ButtonPress>', CloseMENU)
+    label4.bind('<ButtonPress>', CloseMENU)
+    label5.bind('<ButtonPress>', CloseMENU)
+    label6.bind('<ButtonPress>', CloseMENU)
+    label7.bind('<ButtonPress>', CloseMENU)
+    label8.bind('<ButtonPress>', CloseMENU)
+    label9.bind('<ButtonPress>', CloseMENU)
+    label10.bind('<ButtonPress>', CloseMENU)
+    label11.bind('<ButtonPress>', CloseMENU)
+    label12.bind('<ButtonPress>', CloseMENU)
+    label13.bind('<ButtonPress>', CloseMENU)
+    label14.bind('<ButtonPress>', CloseMENU)
+    label15.bind('<ButtonPress>', CloseMENU)
+    label16.bind('<ButtonPress>', CloseMENU)
+    label17.bind('<ButtonPress>', CloseMENU)
 
 app_open_conf()
 
