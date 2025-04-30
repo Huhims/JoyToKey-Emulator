@@ -19437,15 +19437,15 @@ def re_j2_BTicons():
     else:
         kb_Button_17.configure(image=kb_ico_nm)
 # MOUSE chk
-    if not j1_stick1_speed.get() == 0.0:
+    if not j2_stick1_speed.get() == 0.0:
         mb_Button_1.configure(image=mo_ico_ac)
     else:
         mb_Button_1.configure(image=kb_ico_nm)
-    if not j1_stick2_speed.get() == 0.0:
+    if not j2_stick2_speed.get() == 0.0:
         mb_Button_2.configure(image=mo_ico_ac)
     else:
         mb_Button_2.configure(image=kb_ico_nm)
-    if not j1_POV_speed.get() == 0.0:
+    if not j2_POV_speed.get() == 0.0:
         mb_Button_3.configure(image=mo_ico_ac)
     else:
         mb_Button_3.configure(image=kb_ico_nm)
