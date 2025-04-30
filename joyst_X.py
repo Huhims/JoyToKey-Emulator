@@ -20430,9 +20430,9 @@ def save_as_file():
                    "**Button12 C4 = " + js2_C4_Button12.get() + "\n" +
                    "**Button12 C5 = " + js2_C5_Button12.get() + "\n" +
                    "#joystick 2:Mouse" + "\n" +
-                   "Stick1 speed = " + str(j1_stick1_speed.get()) + "\n" +
-                   "Stick2 speed = " + str(j1_stick2_speed.get()) + "\n" +
-                   "POV = " + str(j1_POV_speed.get()) + "\n" +
+                   "Stick1 speed = " + str(j2_stick1_speed.get()) + "\n" +
+                   "Stick2 speed = " + str(j2_stick2_speed.get()) + "\n" +
+                   "POV = " + str(j2_POV_speed.get()) + "\n" +
                    "Button1: Mouse Left click = " + str(js2_Left_MB1.get()) + "\n" +
                    "Button1: Mouse Middle click = " + str(js2_Mid_MB1.get()) + "\n" +
                    "Button1: Mouse Right click = " + str(js2_Right_MB1.get()) + "\n" +
