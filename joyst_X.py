@@ -2019,6 +2019,7 @@ class create_Extra_Form_for_ProfileName(tk.Toplevel):
                     cbox['values'] = Finished_Items
                     profile_names[cbox_sel] = self.Edit1.get()
                     cbox.set(self.Edit1.get())
+                    SelProfName.set(self.Edit1.get())
                     save_file()
 
             else:# New File
