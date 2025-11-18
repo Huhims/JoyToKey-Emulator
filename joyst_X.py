@@ -1962,9 +1962,9 @@ class create_Extra_Form_for_ProfileName(tk.Toplevel):
             self.info_lb.place(x=15, y=6)
 
         if not platform.system() == "Darwin":
-            self.Edit1 = tk.Entry(self, width=28, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 12))
+            self.Edit1 = tk.Entry(self, width=28, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 12), fg="#000000")
         else:
-            self.Edit1 = tk.Entry(self, width=28, borderwidth=1, bg="#FFFFFF", font=(self.ttf_1, 12))
+            self.Edit1 = tk.Entry(self, width=28, borderwidth=1, bg="#FFFFFF", font=(self.ttf_1, 12), fg="#000000")
         self.Edit1.place(x=8, y=29)
         self.Edit1.focus()
 
@@ -2042,6 +2042,243 @@ class create_Extra_Form_for_ProfileName(tk.Toplevel):
         self.ok_pressed()
 
 # class create_Extra_Form_for_ProfileName END
+
+class create_Extra_Form_for_SticksConfig(tk.Toplevel):
+    def __init__(self):
+        super().__init__()
+        self.title("Sticks config:")
+        width = 280
+        height = 349
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x = (screen_width/2) - (width/2)
+        y = (screen_height/2) - (height/2)
+        self.geometry('%dx%d+%d+%d' % (width, height, x, y))
+        self.iconphoto(False, profile_icon)
+        self.configure(bg="#505050")
+        self.resizable(False, False)
+
+        self.OK_str = tk.StringVar(self, "OK")
+        self.Cancel_str = tk.StringVar(self, "Cancel")
+        self.INFO_str = tk.StringVar(self, "0.0 very High sensitivity\n1.0 Low (use when stick is very exhausted)")
+        if not platform.system() == "Darwin":
+            self.first_Button_x = 142
+        else:
+            self.first_Button_x = 113
+
+        if platform.system() == "Linux":
+            self.ttf_1 = "Helvetica"
+            self.ttf_2 = "monospace"
+        elif platform.system() == "Windows":
+            self.ttf_1 = "Microsoft Sans Serif"
+            self.ttf_2 = "Lucida Console"
+        elif platform.system() == "Darwin":
+            self.ttf_1 = "Helvetica Neue"
+            self.ttf_2 = "Consolas"
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j1_Stick1 = tk.Label(self, text="Joystick 1 - Stick 1", font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_Stick1.place(x=10, y=6)
+        else:
+            self.info_lb_j1_Stick1 = tk.Label(self, text="Joystick 1 - Stick 1", font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_Stick1.place(x=10, y=6)
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j1_Stick2 = tk.Label(self, text="Joystick 1 - Stick 2", font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_Stick2.place(x=10, y=66)
+        else:
+            self.info_lb_j1_Stick2 = tk.Label(self, text="Joystick 1 - Stick 2", font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_Stick2.place(x=10, y=66)
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j2_Stick1 = tk.Label(self, text="Joystick 2 - Stick 1", font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_Stick1.place(x=10, y=146)
+        else:
+            self.info_lb_j2_Stick1 = tk.Label(self, text="Joystick 2 - Stick 1", font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_Stick1.place(x=10, y=146)
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j2_Stick2 = tk.Label(self, text="Joystick 2 - Stick 2", font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_Stick2.place(x=10, y=206)
+        else:
+            self.info_lb_j2_Stick2 = tk.Label(self, text="Joystick 2 - Stick 2", font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_Stick2.place(x=10, y=206)
+# Joy 1
+        if not platform.system() == "Darwin":
+            self.info_lb_j1_s1 = tk.Label(self, text=str(j1_s1_x_zeroPos_p.get()), font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_s1.place(x=190, y=36)
+        else:
+            self.info_lb_j1_s1 = tk.Label(self, text=str(j1_s1_x_zeroPos_p.get()), font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_s1.place(x=190, y=36)
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j1_s2 = tk.Label(self, text=str(j1_s2_x_zeroPos_p.get()), font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_s2.place(x=190, y=96)
+        else:
+            self.info_lb_j1_s2 = tk.Label(self, text=str(j1_s2_x_zeroPos_p.get()), font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j1_s2.place(x=190, y=96)
+# Joy 2
+        if not platform.system() == "Darwin":
+            self.info_lb_j2_s1 = tk.Label(self, text=str(j2_s1_x_zeroPos_p.get()), font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_s1.place(x=190, y=176)
+        else:
+            self.info_lb_j2_s1 = tk.Label(self, text=str(j2_s1_x_zeroPos_p.get()), font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_s1.place(x=190, y=176)
+
+        if not platform.system() == "Darwin":
+            self.info_lb_j2_s2 = tk.Label(self, text=str(j2_s2_x_zeroPos_p.get()), font=(self.ttf_1, 10, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_s2.place(x=190, y=236)
+        else:
+            self.info_lb_j2_s2 = tk.Label(self, text=str(j2_s2_x_zeroPos_p.get()), font=(self.ttf_1, 12, "bold"), fg='silver', bg='#505050')
+            self.info_lb_j2_s2.place(x=190, y=236)
+# Buttons
+        if not platform.system() == "Darwin":
+            self.Button_j1_s1_A = tk.Button(self, command=lambda: self.cc_pressed("j1_s1 A"), font=(self.ttf_2, 10), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j1_s1_A = tk.Button(self, command=lambda: self.cc_pressed("j1_s1 A"), font=(self.ttf_2, 12), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j1_s1_A.place(x=25, y=29)
+        self.update()
+        
+        if not platform.system() == "Darwin":
+            self.Button_j1_s1_B = tk.Button(self, command=lambda: self.cc_pressed("j1_s1 B"), font=(self.ttf_2, 10), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j1_s1_B = tk.Button(self, command=lambda: self.cc_pressed("j1_s1 B"), font=(self.ttf_2, 12), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j1_s1_B.place(x=25 + self.Button_j1_s1_A.winfo_width() + 3, y=29)
+
+        if not platform.system() == "Darwin":
+            self.Button_j1_s2_A = tk.Button(self, command=lambda: self.cc_pressed("j1_s2 A"), font=(self.ttf_2, 10), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j1_s2_A = tk.Button(self, command=lambda: self.cc_pressed("j1_s2 A"), font=(self.ttf_2, 12), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j1_s2_A.place(x=25, y=89)
+        self.update()
+        
+        if not platform.system() == "Darwin":
+            self.Button_j1_s2_B = tk.Button(self, command=lambda: self.cc_pressed("j1_s2 B"), font=(self.ttf_2, 10), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j1_s2_B = tk.Button(self, command=lambda: self.cc_pressed("j1_s2 B"), font=(self.ttf_2, 12), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j1_s2_B.place(x=25 + self.Button_j1_s2_A.winfo_width() + 3, y=89)
+
+
+
+        if not platform.system() == "Darwin":
+            self.Button_j2_s1_A = tk.Button(self, command=lambda: self.cc_pressed("j2_s1 A"), font=(self.ttf_2, 10), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j2_s1_A = tk.Button(self, command=lambda: self.cc_pressed("j2_s1 A"), font=(self.ttf_2, 12), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j2_s1_A.place(x=25, y=169)
+        self.update()
+        
+        if not platform.system() == "Darwin":
+            self.Button_j2_s1_B = tk.Button(self, command=lambda: self.cc_pressed("j2_s1 B"), font=(self.ttf_2, 10), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j2_s1_B = tk.Button(self, command=lambda: self.cc_pressed("j2_s1 B"), font=(self.ttf_2, 12), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j2_s1_B.place(x=25 + self.Button_j2_s1_A.winfo_width() + 3, y=169)
+
+        if not platform.system() == "Darwin":
+            self.Button_j2_s2_A = tk.Button(self, command=lambda: self.cc_pressed("j2_s2 A"), font=(self.ttf_2, 10), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j2_s2_A = tk.Button(self, command=lambda: self.cc_pressed("j2_s2 A"), font=(self.ttf_2, 12), text=" < ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j2_s2_A.place(x=25, y=229)
+        self.update()
+        
+        if not platform.system() == "Darwin":
+            self.Button_j2_s2_B = tk.Button(self, command=lambda: self.cc_pressed("j2_s2 B"), font=(self.ttf_2, 10), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Button_j2_s2_B = tk.Button(self, command=lambda: self.cc_pressed("j2_s2 B"), font=(self.ttf_2, 12), text=" > ", padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Button_j2_s2_B.place(x=25 + self.Button_j2_s2_A.winfo_width() + 3, y=229)
+# info lb
+        if not platform.system() == "Darwin":
+            self.info_lb0 = tk.Label(self, text=self.INFO_str.get(), font=(self.ttf_1, 10), fg='yellow', bg='#505050', justify="left")
+            self.info_lb0.place(x=4, y=273)
+        else:
+            self.info_lb0 = tk.Label(self, text=self.INFO_str.get(), font=(self.ttf_1, 12), fg='yellow', bg='#505050', justify="left")
+            self.info_lb0.place(x=4, y=273)
+
+# OK Cancel
+        if not platform.system() == "Darwin":
+            self.OK_Button = tk.Button(self, command=self.ok_pressed, font=(self.ttf_2, 10), text=self.OK_str.get(), padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.OK_Button = tk.Button(self, command=self.ok_pressed, font=(self.ttf_2, 12), text=self.OK_str.get(), padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.OK_Button.place(x=self.first_Button_x, y=311)
+        self.update()
+
+        if not platform.system() == "Darwin":
+            self.Cancel_Button = tk.Button(self, command=self.closeForm, font=(self.ttf_2, 10), text=self.Cancel_str.get(), padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        else:
+            self.Cancel_Button = tk.Button(self, command=self.closeForm, font=(self.ttf_2, 12), text=self.Cancel_str.get(), padx=6, pady=5, borderwidth=1, fg=ButtonFG_color.get(), bg=ButtonBG_color.get(), activeforeground=ButtonAFG_color.get(), activebackground=ButtonABG_color.get(), highlightthickness=0)
+        self.Cancel_Button.place(x=(self.first_Button_x + self.OK_Button.winfo_width() + 12), y=311)
+
+        self.bind_class("Entry", "<Return>", self.key_press)
+        self.protocol("WM_DELETE_WINDOW", self.closeForm)
+
+    def ok_pressed(self):
+        global j1_s1_x_zeroPos_p, j1_s1_x_zeroPos_m, j1_s2_x_zeroPos_p, j1_s2_x_zeroPos_m, j1_s1_y_zeroPos_p, j1_s1_y_zeroPos_m, j1_s2_y_zeroPos_p, j1_s2_y_zeroPos_m, j2_s1_x_zeroPos_p, j2_s1_x_zeroPos_m, j2_s2_x_zeroPos_p, j2_s2_x_zeroPos_m, j2_s1_y_zeroPos_p, j2_s1_y_zeroPos_m, j2_s2_y_zeroPos_p, j2_s2_y_zeroPos_m
+
+        j1_s1_x_zeroPos_p.set(float(self.info_lb_j1_s1.cget('text')))
+        j1_s1_x_zeroPos_m.set(float(self.info_lb_j1_s1.cget('text'))*-1)
+        j1_s1_y_zeroPos_p.set(float(self.info_lb_j1_s1.cget('text')))
+        j1_s1_y_zeroPos_m.set(float(self.info_lb_j1_s1.cget('text'))*-1)
+        j1_s2_x_zeroPos_p.set(float(self.info_lb_j1_s2.cget('text')))
+        j1_s2_x_zeroPos_m.set(float(self.info_lb_j1_s2.cget('text'))*-1)
+        j1_s2_y_zeroPos_p.set(float(self.info_lb_j1_s2.cget('text')))
+        j1_s2_y_zeroPos_m.set(float(self.info_lb_j1_s2.cget('text'))*-1)
+        j2_s1_x_zeroPos_p.set(float(self.info_lb_j2_s1.cget('text')))
+        j2_s1_x_zeroPos_m.set(float(self.info_lb_j2_s1.cget('text'))*-1)
+        j2_s1_y_zeroPos_p.set(float(self.info_lb_j2_s1.cget('text')))
+        j2_s1_y_zeroPos_m.set(float(self.info_lb_j2_s1.cget('text'))*-1)
+        j2_s2_x_zeroPos_p.set(float(self.info_lb_j2_s2.cget('text')))
+        j2_s2_x_zeroPos_m.set(float(self.info_lb_j2_s2.cget('text'))*-1)
+        j2_s2_y_zeroPos_p.set(float(self.info_lb_j2_s2.cget('text')))
+        j2_s2_y_zeroPos_m.set(float(self.info_lb_j2_s2.cget('text'))*-1)
+        sticks_save()
+        self.closeForm()
+
+    def closeForm(self):
+        entry_anime.set(False)
+        e_frame.set(0)
+
+        self.destroy()
+        f_Enable()
+        np_Form_Opened.set(False)
+
+    def key_press(self, event):
+        self.ok_pressed()
+
+    def cc_pressed(self, a):
+        c = 0.0
+        if a == "j1_s1 A":
+            c = float(self.info_lb_j1_s1.cget('text'))
+            if c > 0.0:
+                self.info_lb_j1_s1.config(text = str(round(c - 0.02, 2)))
+        elif a == "j1_s1 B":
+            c = float(self.info_lb_j1_s1.cget('text'))
+            if c < 1.0:
+                self.info_lb_j1_s1.config(text = str(round(c + 0.02, 2)))
+        elif a == "j1_s2 A":
+            c = float(self.info_lb_j1_s2.cget('text'))
+            if c > 0.0:
+                self.info_lb_j1_s2.config(text = str(round(c - 0.02, 2)))
+        elif a == "j1_s2 B":
+            c = float(self.info_lb_j1_s2.cget('text'))
+            if c < 1.0:
+                self.info_lb_j1_s2.config(text = str(round(c + 0.02, 2)))
+        elif a == "j2_s1 A":
+            c = float(self.info_lb_j2_s1.cget('text'))
+            if c > 0.0:
+                self.info_lb_j2_s1.config(text = str(round(c - 0.02, 2)))
+        elif a == "j2_s1 B":
+            c = float(self.info_lb_j2_s1.cget('text'))
+            if c < 1.0:
+                self.info_lb_j2_s1.config(text = str(round(c + 0.02, 2)))
+        elif a == "j2_s2 A":
+            c = float(self.info_lb_j2_s2.cget('text'))
+            if c > 0.0:
+                self.info_lb_j2_s2.config(text = str(round(c - 0.02, 2)))
+        elif a == "j2_s2 B":
+            c = float(self.info_lb_j2_s2.cget('text'))
+            if c < 1.0:
+                self.info_lb_j2_s2.config(text = str(round(c + 0.02, 2)))
+
+# class create_Extra_Form_for_SticksConfig END
 
 class create_Extra_Form_for_KBconfig2(tk.Toplevel):
     def __init__(self):
@@ -16068,7 +16305,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info1_lb = tk.Label(self, text="Form text color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info1_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit1 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit1 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit1.insert(0, FormFG_color.get())
         self.Edit1.place(x=15, y=obj_start_y + self.info1_lb.winfo_height() + 2)
         self.update()
@@ -16078,7 +16315,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info2_lb = tk.Label(self, text="Form background color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info2_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit2 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit2 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit2.insert(0, FormBG_color.get())
         self.Edit2.place(x=15, y=obj_start_y + self.info2_lb.winfo_height() + 2)
         self.update()
@@ -16088,7 +16325,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info3_lb = tk.Label(self, text="Menu text color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info3_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit3 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit3 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit3.insert(0, MenuFG_color.get())
         self.Edit3.place(x=15, y=obj_start_y + self.info3_lb.winfo_height() + 2)
         self.update()
@@ -16098,7 +16335,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info4_lb = tk.Label(self, text="Menu background color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info4_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit4 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit4 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit4.insert(0, MenuBG_color.get())
         self.Edit4.place(x=15, y=obj_start_y + self.info4_lb.winfo_height() + 2)
         self.update()
@@ -16108,7 +16345,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info5_lb = tk.Label(self, text="Menu text color |active| :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info5_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit5 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit5 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit5.insert(0, MenuAFG_color.get())
         self.Edit5.place(x=15, y=obj_start_y + self.info5_lb.winfo_height() + 2)
         self.update()
@@ -16118,7 +16355,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info6_lb = tk.Label(self, text="Menu background color |active| :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info6_lb.place(x=8, y=obj_start_y)
         self.update()
-        self.Edit6 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit6 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit6.insert(0, MenuABG_color.get())
         self.Edit6.place(x=15, y=obj_start_y + self.info6_lb.winfo_height() + 2)
         self.update()
@@ -16129,7 +16366,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info7_lb = tk.Label(self, text="Button text color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info7_lb.place(x=268, y=obj_start2_y)
         self.update()
-        self.Edit7 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit7 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit7.insert(0, ButtonFG_color.get())
         self.Edit7.place(x=275, y=obj_start2_y + self.info1_lb.winfo_height() + 2)
         self.update()
@@ -16139,7 +16376,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info8_lb = tk.Label(self, text="Button text color |disabled| :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info8_lb.place(x=268, y=obj_start2_y)
         self.update()
-        self.Edit8 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit8 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit8.insert(0, ButtonDFG_color.get())
         self.Edit8.place(x=275, y=obj_start2_y + self.info8_lb.winfo_height() + 2)
         self.update()
@@ -16149,7 +16386,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info9_lb = tk.Label(self, text="Button background color :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info9_lb.place(x=268, y=obj_start2_y)
         self.update()
-        self.Edit9 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit9 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit9.insert(0, ButtonBG_color.get())
         self.Edit9.place(x=275, y=obj_start2_y + self.info9_lb.winfo_height() + 2)
         self.update()
@@ -16159,7 +16396,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info10_lb = tk.Label(self, text="Button text color |active| :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info10_lb.place(x=268, y=obj_start2_y)
         self.update()
-        self.Edit10 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit10 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit10.insert(0, ButtonAFG_color.get())
         self.Edit10.place(x=275, y=obj_start2_y + self.info10_lb.winfo_height() + 2)
         self.update()
@@ -16169,7 +16406,7 @@ class create_Extra_Form_for_ThemeColors(tk.Toplevel):
         self.info11_lb = tk.Label(self, text="Button background color |active| :", font=(self.ttf_1, 11), fg='silver', bg='#505050')
         self.info11_lb.place(x=268, y=obj_start2_y)
         self.update()
-        self.Edit11 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11))
+        self.Edit11 = tk.Entry(self, width=8, borderwidth=2, bg="#FFFFFF", font=(self.ttf_1, 11), fg="#000000")
         self.Edit11.insert(0, ButtonABG_color.get())
         self.Edit11.place(x=275, y=obj_start2_y + self.info11_lb.winfo_height() + 2)
 
@@ -17924,6 +18161,19 @@ def OpenThemeForm():
         np_Form_Opened.set(True)
         f_Disable()
 
+def OpenSticksForm():
+    global npForm
+
+    if platform.system() == "Windows" or platform.system() == "Linux":
+        HideEdit_subMENU()
+        Edit_Button.configure(relief='flat')
+        Menu_AC.set(False)
+
+    if np_Form_Opened.get() == False:
+        npForm = create_Extra_Form_for_SticksConfig()
+        np_Form_Opened.set(True)
+        f_Disable()
+
 def New_Profile():
     global npForm
 
@@ -19101,6 +19351,32 @@ mb_Form_Opened = tk.BooleanVar(root, False)
 
 app_running = tk.BooleanVar(root, True)
 
+j1_s1_x_zeroPos_p = tk.DoubleVar(root, 0.2)
+j1_s1_x_zeroPos_m = tk.DoubleVar(root, -0.2)
+j1_s1_y_zeroPos_p = tk.DoubleVar(root, 0.2)
+j1_s1_y_zeroPos_m = tk.DoubleVar(root, -0.2)
+j1_s2_x_zeroPos_p = tk.DoubleVar(root, 0.2)
+j1_s2_x_zeroPos_m = tk.DoubleVar(root, -0.2)
+j1_s2_y_zeroPos_p = tk.DoubleVar(root, 0.2)
+j1_s2_y_zeroPos_m = tk.DoubleVar(root, -0.2)
+j1_s1_x_perm = tk.BooleanVar(root, False)
+j1_s1_y_perm = tk.BooleanVar(root, False)
+j1_s2_x_perm = tk.BooleanVar(root, False)
+j1_s2_y_perm = tk.BooleanVar(root, False)
+
+j2_s1_x_zeroPos_p = tk.DoubleVar(root, 0.2)
+j2_s1_x_zeroPos_m = tk.DoubleVar(root, -0.2)
+j2_s1_y_zeroPos_p = tk.DoubleVar(root, 0.2)
+j2_s1_y_zeroPos_m = tk.DoubleVar(root, -0.2)
+j2_s2_x_zeroPos_p = tk.DoubleVar(root, 0.2)
+j2_s2_x_zeroPos_m = tk.DoubleVar(root, -0.2)
+j2_s2_y_zeroPos_p = tk.DoubleVar(root, 0.2)
+j2_s2_y_zeroPos_m = tk.DoubleVar(root, -0.2)
+j2_s1_x_perm = tk.BooleanVar(root, False)
+j2_s1_y_perm = tk.BooleanVar(root, False)
+j2_s2_x_perm = tk.BooleanVar(root, False)
+j2_s2_y_perm = tk.BooleanVar(root, False)
+
 j1_Direction = tk.StringVar(root, "nil")
 j1_Stick_1_x = tk.DoubleVar(root, 0.0)
 j1_Stick_1_y = tk.DoubleVar(root, 0.0)
@@ -20042,6 +20318,91 @@ def save_file():
             canv1.delete('pik')
 
 Saving_name = tk.StringVar(root, "")
+
+def sticks_load():
+    if not platform.system() == "Windows":
+        filepath = Path(str(userDIR) + "/.local/share/jsk/sticks.cf")
+        newDIR = Path(str(userDIR) + "/.local/share/jsk")
+    else:
+        filepath = Path(str(userDIR) + "\\AppData\\Local\\jsk\\sticks.cf")
+        newDIR = Path(str(userDIR) + "\\AppData\\Local\\jsk")
+
+    if filepath.is_file():
+        with open(filepath, 'r') as file:
+            ln_e = file.readlines()
+
+            j1_s1_x_zeroPos_p.set(float(ln_e[0]))
+            j1_s1_x_zeroPos_m.set(float(ln_e[1]))
+            j1_s1_y_zeroPos_p.set(float(ln_e[2]))
+            j1_s1_y_zeroPos_m.set(float(ln_e[3]))
+            j1_s2_x_zeroPos_p.set(float(ln_e[4]))
+            j1_s2_x_zeroPos_m.set(float(ln_e[5]))
+            j1_s2_y_zeroPos_p.set(float(ln_e[6]))
+            j1_s2_y_zeroPos_m.set(float(ln_e[7]))
+            j2_s1_x_zeroPos_p.set(float(ln_e[8]))
+            j2_s1_x_zeroPos_m.set(float(ln_e[9]))
+            j2_s1_y_zeroPos_p.set(float(ln_e[10]))
+            j2_s1_y_zeroPos_m.set(float(ln_e[11]))
+            j2_s2_x_zeroPos_p.set(float(ln_e[12]))
+            j2_s2_x_zeroPos_m.set(float(ln_e[13]))
+            j2_s2_y_zeroPos_p.set(float(ln_e[14]))
+            j2_s2_y_zeroPos_m.set(float(ln_e[15]))
+
+def sticks_save():
+    if not platform.system() == "Windows":
+        filepath = Path(str(userDIR) + "/.local/share/jsk/sticks.cf")
+        newDIR = Path(str(userDIR) + "/.local/share/jsk")
+    else:
+        filepath = Path(str(userDIR) + "\\AppData\\Local\\jsk\\sticks.cf")
+        newDIR = Path(str(userDIR) + "\\AppData\\Local\\jsk")
+
+    if filepath.is_file():
+        TextFile = open(filepath, "w")
+       # j1_s1
+        TextFile.write(str(j1_s1_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s1_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j1_s1_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s1_y_zeroPos_m.get()) + "\n")
+       # j1_s2
+        TextFile.write(str(j1_s2_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s2_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j1_s2_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s2_y_zeroPos_m.get()) + "\n")
+       # j2_s1
+        TextFile.write(str(j2_s1_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s1_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j2_s1_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s1_y_zeroPos_m.get()) + "\n")
+       # j2_s2
+        TextFile.write(str(j2_s2_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s2_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j2_s2_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s2_y_zeroPos_m.get()))
+        TextFile.close()
+    else:
+        newDIR.mkdir(parents=True, exist_ok=True)
+        TextFile = open(filepath, "x") # New file
+       # j1_s1
+        TextFile.write(str(j1_s1_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s1_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j1_s1_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s1_y_zeroPos_m.get()) + "\n")
+       # j1_s2
+        TextFile.write(str(j1_s2_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s2_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j1_s2_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j1_s2_y_zeroPos_m.get()) + "\n")
+       # j2_s1
+        TextFile.write(str(j2_s1_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s1_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j2_s1_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s1_y_zeroPos_m.get()) + "\n")
+       # j2_s2
+        TextFile.write(str(j2_s2_x_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s2_x_zeroPos_m.get()) + "\n")
+        TextFile.write(str(j2_s2_y_zeroPos_p.get()) + "\n")
+        TextFile.write(str(j2_s2_y_zeroPos_m.get()))
+        TextFile.close()
 
 def save_as_file():
     global cbox_filepath_list, cbox_nr, jcf_path, cbox_sel
@@ -24972,17 +25333,19 @@ def HideFile_subMENU():
     Exit_Button.place_forget()
 
 def ShowEdit_subMENU():
-    global sub1E_x, sub1E_y, sub2E_x, sub2E_y, sub3E_x, sub3E_y, sub4E_x, sub4E_y
+    global sub1E_x, sub1E_y, sub2E_x, sub2E_y, sub3E_x, sub3E_y, sub4E_x, sub4E_y, sub5E_x, sub5E_y
     NewProfile_Button.place(x=sub1E_x, y=sub1E_y)
     Rename_Button.place(x=sub2E_x, y=sub2E_y)
     Delete_Button.place(x=sub3E_x, y=sub3E_y)
     ThCol_Button.place(x=sub4E_x, y=sub4E_y)
+    SK_Button.place(x=sub5E_x, y=sub5E_y)
 
 def HideEdit_subMENU():
     NewProfile_Button.place_forget()
     Rename_Button.place_forget()
     Delete_Button.place_forget()
     ThCol_Button.place_forget()
+    SK_Button.place_forget()
 
 def ShowJoys_subMENU():
     global sub1J_x, sub1J_y, sub2J_x, sub2J_y
@@ -25387,9 +25750,18 @@ if platform.system() == "Windows":
     ThCol_Button = tk.Button(root, width=11, font=("Microsoft Sans Serif", 11), command=OpenThemeForm, relief='flat', anchor="w", text=" Theme color", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
     ThCol_Button.place(x=menu_start_x + menu1B_width, y=menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height)
     root.update()
+    sub4B_width = ThCol_Button.winfo_width()
+    sub4B_height = ThCol_Button.winfo_height()
     sub4E_x = menu_start_x + menu1B_width
     sub4E_y = menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height
     ThCol_Button.place_forget()
+    
+    SK_Button = tk.Button(root, width=11, font=("Microsoft Sans Serif", 11), command=OpenSticksForm, relief='flat', anchor="w", text=" Analogs", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
+    SK_Button.place(x=menu_start_x + menu1B_width, y=menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height)
+    root.update()    
+    sub5E_x = menu_start_x + menu1B_width
+    sub5E_y = menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height + sub4B_height
+    SK_Button.place_forget()
 
 # == sub MENU == Joysticks:
     Joy1_Button = tk.Button(root, image=rb_icon_True, compound='left', font=("Microsoft Sans Serif", 11), command=change_js1, relief='flat', text="Joystick 1  ", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
@@ -25732,10 +26104,19 @@ elif platform.system() == "Linux":
     ThCol_Button = tk.Button(root, width=11, font=("monospace", 11), command=OpenThemeForm, relief='flat', anchor="w", text="Theme color", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
     ThCol_Button.place(x=menu_start_x + menu1B_width, y=menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height)
     root.update()
+    sub4B_width = ThCol_Button.winfo_width()
+    sub4B_height = ThCol_Button.winfo_height()
     sub4E_x = menu_start_x + menu1B_width
     sub4E_y = menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height
     ThCol_Button.place_forget()
-
+    
+    SK_Button = tk.Button(root, width=11, font=("monospace", 11), command=OpenSticksForm, relief='flat', anchor="w", text="Analogs", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
+    SK_Button.place(x=menu_start_x + menu1B_width, y=menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height)
+    root.update()    
+    sub5E_x = menu_start_x + menu1B_width
+    sub5E_y = menu2B_height + 1 + sub1B_height + sub2B_height + sub3B_height + sub4B_height
+    SK_Button.place_forget()
+    
 # == sub MENU == Joysticks:
     Joy1_Button = tk.Button(root, image=rb_icon_True, compound='left', font=("monospace", 11), command=change_js1, relief='flat', text="Joystick 1", borderwidth=1, fg=MenuFG_color.get(), bg=MenuBG_color.get(), activeforeground=MenuAFG_color.get(), activebackground=MenuABG_color.get(), highlightthickness=0, disabledforeground=ButtonDFG_color.get())
     Joy1_Button.place(x=menu_start_x + menu1B_width + menu2B_width, y=menu3B_height + 1)
@@ -26008,7 +26389,8 @@ elif platform.system() == "Darwin":
     next1_menu.add_command(label="Rename", command=Rename_Profile)
     next1_menu.add_command(label="Delete", command=Remove_Profile, state='disabled')
     next1_menu.add_separator()
-    next1_menu.add_command(label="Theme colors", command=Rename_Profile, state='disabled')
+    next1_menu.add_command(label="Theme colors", state='disabled')
+    next1_menu.add_command(label="Analogs", command=OpenSticksForm)
     menubar.add_cascade(label="Profile", menu=next1_menu)
 
 
@@ -26048,6 +26430,7 @@ if not platform.system() == "Darwin":
     label17.bind('<ButtonPress>', CloseMENU)
 
 app_open_conf()
+sticks_load()
 
 def Press_virKey(key_data):
     if key_data == "Tab":
@@ -26444,31 +26827,34 @@ def csel(event):
     if chngblok.get() == True:
         ShowMessage()
 
-    jcf_path = Path(cbox_filepath_list[cbox.current()])
-    SelProfName.set(cbox.get())
-    print("Selected: " + str(jcf_path))
-
-    Clear_VAR()
-    load_var()
-
-    if j1_selected.get() == True:
-        re_j1_BTicons()
+    if not cbox_filepath_list:
+        pass
     else:
-        re_j2_BTicons()
+        jcf_path = Path(cbox_filepath_list[cbox.current()])
+        SelProfName.set(cbox.get())
+        print("Selected: " + str(jcf_path))
 
-    if not platform.system() == "Windows":
-        filepath = Path(str(userDIR) + "/.local/share/jsk/config.cf")
-    else:
-        filepath = Path(str(userDIR) + "\\AppData\\Local\\jsk\\config.cf")
+        Clear_VAR()
+        load_var()
 
-    if filepath.is_file():
-        with open(filepath, 'r') as file:
-            data = file.readlines()
+        if j1_selected.get() == True:
+            re_j1_BTicons()
+        else:
+            re_j2_BTicons()
 
-        data[16] = str(cbox_sel) + "\n"
+        if not platform.system() == "Windows":
+            filepath = Path(str(userDIR) + "/.local/share/jsk/config.cf")
+        else:
+            filepath = Path(str(userDIR) + "\\AppData\\Local\\jsk\\config.cf")
 
-        with open(filepath, 'w') as file:
-            file.writelines(data)
+        if filepath.is_file():
+            with open(filepath, 'r') as file:
+                data = file.readlines()
+
+            data[16] = str(cbox_sel) + "\n"
+
+            with open(filepath, 'w') as file:
+                file.writelines(data)
 
 cbox.bind('<<ComboboxSelected>>', csel)
 
@@ -26909,21 +27295,41 @@ while app_running.get() == True:
     if j1_pluged.get() == True:
 # MOUSE:
         if not j1_stick1_speed.get() == 0.0:
+            if j1_Stick_1_Detct_x.get() > j1_s1_x_zeroPos_p.get() or j1_Stick_1_Detct_x.get() < j1_s1_x_zeroPos_m.get():
+                j1_s1_x_perm.set(True)
+            else:
+                j1_s1_x_perm.set(False)
+
+            if j1_Stick_1_Detct_y.get() > j1_s1_y_zeroPos_p.get() or j1_Stick_1_Detct_y.get() < j1_s1_y_zeroPos_m.get():
+                j1_s1_y_perm.set(True)
+            else:
+                j1_s1_y_perm.set(False)
+
 #     Analog 1
-            if not j1_Stick_1_x.get() == 0.0 and not j1_Stick_1_y.get() == 0.0:
+            if j1_s1_x_perm.get() == True and j1_s1_y_perm.get() == True:
                 OS_mouse.move(round(j1_Stick_1_x.get()), round(j1_Stick_1_y.get()))
-            elif not j1_Stick_1_x.get() == 0.0 and j1_Stick_1_y.get() == 0.0:
+            elif j1_s1_x_perm.get() == True and j1_s1_y_perm.get() == False:
                 OS_mouse.move(round(j1_Stick_1_x.get()), 0)
-            elif j1_Stick_1_x.get() == 0.0 and not j1_Stick_1_y.get() == 0.0:
+            elif j1_s1_x_perm.get() == False and j1_s1_y_perm.get() == True:
                 OS_mouse.move(0, round(j1_Stick_1_y.get()))
 
         if not j1_stick2_speed.get() == 0.0:
+            if j1_Stick_2_Detct_x.get() > j1_s2_x_zeroPos_p.get() or j1_Stick_2_Detct_x.get() < j1_s2_x_zeroPos_m.get():
+                j1_s2_x_perm.set(True)
+            else:
+                j1_s2_x_perm.set(False)
+
+            if j1_Stick_2_Detct_y.get() > j1_s2_y_zeroPos_p.get() or j1_Stick_2_Detct_y.get() < j1_s2_y_zeroPos_m.get():
+                j1_s2_y_perm.set(True)
+            else:
+                j1_s2_y_perm.set(False)
+
 #     Analog 2
-            if not j1_Stick_2_x.get() == 0.0 and not j1_Stick_2_y.get() == 0.0:
+            if j1_s2_x_perm.get() == True and j1_s2_y_perm.get() == True:
                 OS_mouse.move(round(j1_Stick_2_x.get()), round(j1_Stick_2_y.get()))
-            elif not j1_Stick_2_x.get() == 0.0 and j1_Stick_2_y.get() == 0.0:
+            elif j1_s2_x_perm.get() == True and j1_s2_y_perm.get() == False:
                 OS_mouse.move(round(j1_Stick_2_x.get()), 0)
-            elif j1_Stick_2_x.get() == 0.0 and not j1_Stick_2_y.get() == 0.0:
+            elif j1_s2_x_perm.get() == False and j1_s2_y_perm.get() == True:
                 OS_mouse.move(0, round(j1_Stick_2_y.get()))
 #     POV
         if not j1_POV_speed.get() == 0.0:
@@ -27730,7 +28136,7 @@ while app_running.get() == True:
 
 # Keyboard:
         # Analog 1
-        if j1_Stick_1_x.get() < -0.5 and j1_Stick_1_y.get() < -0.5:
+        if j1_Stick_1_Detct_x.get() < j1_s1_x_zeroPos_m.get() and j1_Stick_1_Detct_y.get() < j1_s1_y_zeroPos_m.get():
 # left / up
             if not js1_stick1_kb_left.get() == "nil" and js1_Left_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_left_Hold_activ.get() == False and js1_stick1_kb_left_Hold_chk.get() == 0:
@@ -27764,7 +28170,7 @@ while app_running.get() == True:
                 js1_stick1_kb_up_pressed.set(True)
                 Press_virKey(js1_stick1_kb_up.get())
 
-        elif j1_Stick_1_x.get() > 0.5 and j1_Stick_1_y.get() < -0.5:
+        elif j1_Stick_1_Detct_x.get() > j1_s1_x_zeroPos_p.get() and j1_Stick_1_Detct_y.get() < j1_s1_y_zeroPos_m.get():
 # right / up
             if not js1_stick1_kb_right.get() == "nil" and js1_Right_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_right_Hold_activ.get() == False and js1_stick1_kb_right_Hold_chk.get() == 0:
@@ -27798,7 +28204,7 @@ while app_running.get() == True:
                 js1_stick1_kb_up_pressed.set(True)
                 Press_virKey(js1_stick1_kb_up.get())
 
-        elif j1_Stick_1_x.get() < -0.5 and j1_Stick_1_y.get() > 0.5:
+        elif j1_Stick_1_Detct_x.get() < j1_s1_x_zeroPos_m.get() and j1_Stick_1_Detct_y.get() > j1_s1_y_zeroPos_p.get():
 # left / up
             if not js1_stick1_kb_left.get() == "nil" and js1_Left_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_left_Hold_activ.get() == False and js1_stick1_kb_left_Hold_chk.get() == 0:
@@ -27832,7 +28238,7 @@ while app_running.get() == True:
                 js1_stick1_kb_down_pressed.set(True)
                 Press_virKey(js1_stick1_kb_down.get())
 
-        elif j1_Stick_1_x.get() > 0.5 and j1_Stick_1_y.get() > 0.5:
+        elif j1_Stick_1_Detct_x.get() > j1_s1_x_zeroPos_p.get() and j1_Stick_1_Detct_y.get() > j1_s1_y_zeroPos_p.get():
 # right / up
             if not js1_stick1_kb_right.get() == "nil" and js1_Right_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_right_Hold_activ.get() == False and js1_stick1_kb_right_Hold_chk.get() == 0:
@@ -27866,7 +28272,7 @@ while app_running.get() == True:
                 js1_stick1_kb_down_pressed.set(True)
                 Press_virKey(js1_stick1_kb_down.get())
 
-        elif j1_Stick_1_x.get() > 0.5:
+        elif j1_Stick_1_Detct_x.get() > j1_s1_x_zeroPos_p.get():
             if not js1_stick1_kb_right.get() == "nil" and js1_Right_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_right_Hold_activ.get() == False and js1_stick1_kb_right_Hold_chk.get() == 0:
                     js1_stick1_kb_right_Hold_activ.set(True)
@@ -27883,7 +28289,7 @@ while app_running.get() == True:
                 js1_stick1_kb_right_pressed.set(True)
                 Press_virKey(js1_stick1_kb_right.get())
 
-        elif j1_Stick_1_x.get() < -0.5:
+        elif j1_Stick_1_Detct_x.get() < j1_s1_x_zeroPos_m.get():
             if not js1_stick1_kb_left.get() == "nil" and js1_Left_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_left_Hold_activ.get() == False and js1_stick1_kb_left_Hold_chk.get() == 0:
                     js1_stick1_kb_left_Hold_activ.set(True)
@@ -27900,7 +28306,7 @@ while app_running.get() == True:
                 js1_stick1_kb_left_pressed.set(True)
                 Press_virKey(js1_stick1_kb_left.get())
 
-        elif j1_Stick_1_y.get() > 0.5:
+        elif j1_Stick_1_Detct_y.get() > j1_s1_y_zeroPos_p.get():
             if not js1_stick1_kb_down.get() == "nil" and js1_Down_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_down_Hold_activ.get() == False and js1_stick1_kb_down_Hold_chk.get() == 0:
                     js1_stick1_kb_down_Hold_activ.set(True)
@@ -27917,7 +28323,7 @@ while app_running.get() == True:
                 js1_stick1_kb_down_pressed.set(True)
                 Press_virKey(js1_stick1_kb_down.get())
 
-        elif j1_Stick_1_y.get() < -0.5:
+        elif j1_Stick_1_Detct_y.get() < j1_s1_y_zeroPos_m.get():
             if not js1_stick1_kb_up.get() == "nil" and js1_Up_Hold_stick1.get() == True: # Hold mode
                 if js1_stick1_kb_up_Hold_activ.get() == False and js1_stick1_kb_up_Hold_chk.get() == 0:
                     js1_stick1_kb_up_Hold_activ.set(True)
@@ -27977,7 +28383,7 @@ while app_running.get() == True:
                     Release_virKey(js1_stick1_kb_down.get())
 
         # Analog 2
-        if j1_Stick_2_x.get() < -0.5 and j1_Stick_2_y.get() < -0.5:
+        if j1_Stick_2_Detct_x.get() < j1_s2_x_zeroPos_m.get() and j1_Stick_2_Detct_y.get() < j1_s2_y_zeroPos_m.get():
 # left / up
             if not js1_stick2_kb_left.get() == "nil" and js1_Left_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_left_Hold_activ.get() == False and js1_stick2_kb_left_Hold_chk.get() == 0:
@@ -28011,7 +28417,7 @@ while app_running.get() == True:
                 js1_stick2_kb_up_pressed.set(True)
                 Press_virKey(js1_stick2_kb_up.get())
 
-        elif j1_Stick_2_x.get() > 0.5 and j1_Stick_2_y.get() < -0.5:
+        elif j1_Stick_2_Detct_x.get() > j1_s2_x_zeroPos_p.get() and j1_Stick_2_Detct_y.get() < j1_s2_y_zeroPos_m.get():
 # right / up
             if not js1_stick2_kb_right.get() == "nil" and js1_Right_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_right_Hold_activ.get() == False and js1_stick2_kb_right_Hold_chk.get() == 0:
@@ -28045,7 +28451,7 @@ while app_running.get() == True:
                 js1_stick2_kb_up_pressed.set(True)
                 Press_virKey(js1_stick2_kb_up.get())
 
-        elif j1_Stick_2_x.get() < -0.5 and j1_Stick_2_y.get() > 0.5:
+        elif j1_Stick_2_Detct_x.get() < j1_s2_x_zeroPos_m.get() and j1_Stick_2_Detct_y.get() > j1_s2_y_zeroPos_p.get():
 # left / up
             if not js1_stick2_kb_left.get() == "nil" and js1_Left_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_left_Hold_activ.get() == False and js1_stick2_kb_left_Hold_chk.get() == 0:
@@ -28079,7 +28485,7 @@ while app_running.get() == True:
                 js1_stick2_kb_down_pressed.set(True)
                 Press_virKey(js1_stick2_kb_down.get())
 
-        elif j1_Stick_2_x.get() > 0.5 and j1_Stick_2_y.get() > 0.5:
+        elif j1_Stick_2_Detct_x.get() > j1_s2_x_zeroPos_p.get() and j1_Stick_2_Detct_y.get() > j1_s2_y_zeroPos_p.get():
 # right / up
             if not js1_stick2_kb_right.get() == "nil" and js1_Right_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_right_Hold_activ.get() == False and js1_stick2_kb_right_Hold_chk.get() == 0:
@@ -28113,7 +28519,7 @@ while app_running.get() == True:
                 js1_stick2_kb_down_pressed.set(True)
                 Press_virKey(js1_stick2_kb_down.get())
 
-        elif j1_Stick_2_x.get() > 0.5:
+        elif j1_Stick_2_Detct_x.get() > j1_s2_x_zeroPos_p.get():
             if not js1_stick2_kb_right.get() == "nil" and js1_Right_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_right_Hold_activ.get() == False and js1_stick2_kb_right_Hold_chk.get() == 0:
                     js1_stick2_kb_right_Hold_activ.set(True)
@@ -28130,7 +28536,7 @@ while app_running.get() == True:
                 js1_stick2_kb_right_pressed.set(True)
                 Press_virKey(js1_stick2_kb_right.get())
 
-        elif j1_Stick_2_x.get() < -0.5:
+        elif j1_Stick_2_Detct_x.get() < j1_s2_x_zeroPos_m.get():
             if not js1_stick2_kb_left.get() == "nil" and js1_Left_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_left_Hold_activ.get() == False and js1_stick2_kb_left_Hold_chk.get() == 0:
                     js1_stick2_kb_left_Hold_activ.set(True)
@@ -28147,7 +28553,7 @@ while app_running.get() == True:
                 js1_stick2_kb_left_pressed.set(True)
                 Press_virKey(js1_stick2_kb_left.get())
 
-        elif j1_Stick_2_y.get() > 0.5:
+        elif j1_Stick_2_Detct_y.get() > j1_s2_y_zeroPos_p.get():
             if not js1_stick2_kb_down.get() == "nil" and js1_Down_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_down_Hold_activ.get() == False and js1_stick2_kb_down_Hold_chk.get() == 0:
                     js1_stick2_kb_down_Hold_activ.set(True)
@@ -28164,7 +28570,7 @@ while app_running.get() == True:
                 js1_stick2_kb_down_pressed.set(True)
                 Press_virKey(js1_stick2_kb_down.get())
 
-        elif j1_Stick_2_y.get() < -0.5:
+        elif j1_Stick_2_Detct_y.get() < j1_s2_y_zeroPos_m.get():
             if not js1_stick2_kb_up.get() == "nil" and js1_Up_Hold_stick2.get() == True: # Hold mode
                 if js1_stick2_kb_up_Hold_activ.get() == False and js1_stick2_kb_up_Hold_chk.get() == 0:
                     js1_stick2_kb_up_Hold_activ.set(True)
@@ -29564,22 +29970,43 @@ while app_running.get() == True:
     if j2_pluged.get() == True:
 # MOUSE:
         if not j2_stick1_speed.get() == 0.0:
+            if j2_Stick_1_Detct_x.get() > j2_s1_x_zeroPos_p.get() or j2_Stick_1_Detct_x.get() < j2_s1_x_zeroPos_m.get():
+                j2_s1_x_perm.set(True)
+            else:
+                j2_s1_x_perm.set(False)
+
+            if j2_Stick_1_Detct_y.get() > j2_s1_y_zeroPos_p.get() or j2_Stick_1_Detct_y.get() < j2_s1_y_zeroPos_m.get():
+                j2_s1_y_perm.set(True)
+            else:
+                j2_s1_y_perm.set(False)
+
 #     Analog 1
-            if not j2_Stick_1_x.get() == 0.0 and not j2_Stick_1_y.get() == 0.0:
+            if j2_s1_x_perm.get() == True and j2_s1_y_perm.get() == True:
                 OS_mouse.move(round(j2_Stick_1_x.get()), round(j2_Stick_1_y.get()))
-            elif not j2_Stick_1_x.get() == 0.0 and j2_Stick_1_y.get() == 0.0:
+            elif j2_s1_x_perm.get() == True and j2_s1_y_perm.get() == False:
                 OS_mouse.move(round(j2_Stick_1_x.get()), 0)
-            elif j2_Stick_1_x.get() == 0.0 and not j2_Stick_1_y.get() == 0.0:
+            elif j2_s1_x_perm.get() == False and j2_s1_y_perm.get() == True:
                 OS_mouse.move(0, round(j2_Stick_1_y.get()))
 
         if not j2_stick2_speed.get() == 0.0:
+            if j2_Stick_2_Detct_x.get() > j2_s2_x_zeroPos_p.get() or j2_Stick_2_Detct_x.get() < j2_s2_x_zeroPos_m.get():
+                j2_s2_x_perm.set(True)
+            else:
+                j2_s2_x_perm.set(False)
+
+            if j2_Stick_2_Detct_y.get() > j2_s2_y_zeroPos_p.get() or j2_Stick_2_Detct_y.get() < j2_s2_y_zeroPos_m.get():
+                j2_s2_y_perm.set(True)
+            else:
+                j2_s2_y_perm.set(False)
+
 #     Analog 2
-            if not j2_Stick_2_x.get() == 0.0 and not j2_Stick_2_y.get() == 0.0:
+            if j2_s2_x_perm.get() == True and j2_s2_y_perm.get() == True:
                 OS_mouse.move(round(j2_Stick_2_x.get()), round(j2_Stick_2_y.get()))
-            elif not j2_Stick_2_x.get() == 0.0 and j2_Stick_2_y.get() == 0.0:
+            elif j2_s2_x_perm.get() == True and j2_s2_y_perm.get() == False:
                 OS_mouse.move(round(j2_Stick_2_x.get()), 0)
-            elif j2_Stick_2_x.get() == 0.0 and not j2_Stick_2_y.get() == 0.0:
+            elif j2_s2_x_perm.get() == False and j2_s2_y_perm.get() == True:
                 OS_mouse.move(0, round(j2_Stick_2_y.get()))
+
 #     POV
         if not j2_POV_speed.get() == 0.0:
             if not j2_Direction.get() == "nil":
@@ -30497,7 +30924,7 @@ while app_running.get() == True:
 
 # Keyboard:
         # Analog 1
-        if j2_Stick_1_x.get() < -0.5 and j2_Stick_1_y.get() < -0.5:
+        if j2_Stick_1_Detct_x.get() < j2_s1_x_zeroPos_m.get() and j2_Stick_1_Detct_y.get() < j2_s1_y_zeroPos_m.get():
 # left / up
             if not js2_stick1_kb_left.get() == "nil" and js2_Left_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_left_Hold_activ.get() == False and js2_stick1_kb_left_Hold_chk.get() == 0:
@@ -30531,7 +30958,7 @@ while app_running.get() == True:
                 js2_stick1_kb_up_pressed.set(True)
                 Press_virKey(js2_stick1_kb_up.get())
 
-        elif j2_Stick_1_x.get() > 0.5 and j2_Stick_1_y.get() < -0.5:
+        elif j2_Stick_1_Detct_x.get() > j2_s1_x_zeroPos_p.get() and j2_Stick_1_Detct_y.get() < j2_s1_y_zeroPos_m.get():
 # right / up
             if not js2_stick1_kb_right.get() == "nil" and js2_Right_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_right_Hold_activ.get() == False and js2_stick1_kb_right_Hold_chk.get() == 0:
@@ -30565,7 +30992,7 @@ while app_running.get() == True:
                 js2_stick1_kb_up_pressed.set(True)
                 Press_virKey(js2_stick1_kb_up.get())
 
-        elif j2_Stick_1_x.get() < -0.5 and j2_Stick_1_y.get() > 0.5:
+        elif j2_Stick_1_Detct_x.get() < j2_s1_x_zeroPos_m.get() and j2_Stick_1_Detct_y.get() > j2_s1_y_zeroPos_p.get():
 # left / up
             if not js2_stick1_kb_left.get() == "nil" and js2_Left_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_left_Hold_activ.get() == False and js2_stick1_kb_left_Hold_chk.get() == 0:
@@ -30599,7 +31026,7 @@ while app_running.get() == True:
                 js2_stick1_kb_down_pressed.set(True)
                 Press_virKey(js2_stick1_kb_down.get())
 
-        elif j2_Stick_1_x.get() > 0.5 and j2_Stick_1_y.get() > 0.5:
+        elif j2_Stick_1_Detct_x.get() > j2_s1_x_zeroPos_p.get() and j2_Stick_1_Detct_y.get() > j2_s1_y_zeroPos_p.get():
 # right / up
             if not js2_stick1_kb_right.get() == "nil" and js2_Right_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_right_Hold_activ.get() == False and js2_stick1_kb_right_Hold_chk.get() == 0:
@@ -30633,7 +31060,7 @@ while app_running.get() == True:
                 js2_stick1_kb_down_pressed.set(True)
                 Press_virKey(js2_stick1_kb_down.get())
 
-        elif j2_Stick_1_x.get() > 0.5:
+        elif j2_Stick_1_Detct_x.get() > j2_s1_x_zeroPos_p.get():
             if not js2_stick1_kb_right.get() == "nil" and js2_Right_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_right_Hold_activ.get() == False and js2_stick1_kb_right_Hold_chk.get() == 0:
                     js2_stick1_kb_right_Hold_activ.set(True)
@@ -30650,7 +31077,7 @@ while app_running.get() == True:
                 js2_stick1_kb_right_pressed.set(True)
                 Press_virKey(js2_stick1_kb_right.get())
 
-        elif j2_Stick_1_x.get() < -0.5:
+        elif j2_Stick_1_Detct_x.get() < j2_s1_x_zeroPos_m.get():
             if not js2_stick1_kb_left.get() == "nil" and js2_Left_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_left_Hold_activ.get() == False and js2_stick1_kb_left_Hold_chk.get() == 0:
                     js2_stick1_kb_left_Hold_activ.set(True)
@@ -30667,7 +31094,7 @@ while app_running.get() == True:
                 js2_stick1_kb_left_pressed.set(True)
                 Press_virKey(js2_stick1_kb_left.get())
 
-        elif j2_Stick_1_y.get() > 0.5:
+        elif j2_Stick_1_Detct_y.get() > j2_s1_y_zeroPos_p.get():
             if not js2_stick1_kb_down.get() == "nil" and js2_Down_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_down_Hold_activ.get() == False and js2_stick1_kb_down_Hold_chk.get() == 0:
                     js2_stick1_kb_down_Hold_activ.set(True)
@@ -30684,7 +31111,7 @@ while app_running.get() == True:
                 js2_stick1_kb_down_pressed.set(True)
                 Press_virKey(js2_stick1_kb_down.get())
 
-        elif j2_Stick_1_y.get() < -0.5:
+        elif j2_Stick_1_Detct_y.get() < j2_s1_y_zeroPos_m.get():
             if not js2_stick1_kb_up.get() == "nil" and js2_Up_Hold_stick1.get() == True: # Hold mode
                 if js2_stick1_kb_up_Hold_activ.get() == False and js2_stick1_kb_up_Hold_chk.get() == 0:
                     js2_stick1_kb_up_Hold_activ.set(True)
@@ -30744,7 +31171,7 @@ while app_running.get() == True:
                     Release_virKey(js2_stick1_kb_down.get())
 
         # Analog 2
-        if j2_Stick_2_x.get() < -0.5 and j2_Stick_2_y.get() < -0.5:
+        if j2_Stick_2_Detct_x.get() < j2_s2_x_zeroPos_m.get() and j2_Stick_2_Detct_y.get() < j2_s2_y_zeroPos_m.get():
 # left / up
             if not js2_stick2_kb_left.get() == "nil" and js2_Left_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_left_Hold_activ.get() == False and js2_stick2_kb_left_Hold_chk.get() == 0:
@@ -30778,7 +31205,7 @@ while app_running.get() == True:
                 js2_stick2_kb_up_pressed.set(True)
                 Press_virKey(js2_stick2_kb_up.get())
 
-        elif j2_Stick_2_x.get() > 0.5 and j2_Stick_2_y.get() < -0.5:
+        elif j2_Stick_2_Detct_x.get() > j2_s2_x_zeroPos_p.get() and j2_Stick_2_Detct_y.get() < j2_s2_y_zeroPos_m.get():
 # right / up
             if not js2_stick2_kb_right.get() == "nil" and js2_Right_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_right_Hold_activ.get() == False and js2_stick2_kb_right_Hold_chk.get() == 0:
@@ -30812,7 +31239,7 @@ while app_running.get() == True:
                 js2_stick2_kb_up_pressed.set(True)
                 Press_virKey(js2_stick2_kb_up.get())
 
-        elif j2_Stick_2_x.get() < -0.5 and j2_Stick_2_y.get() > 0.5:
+        elif j2_Stick_2_Detct_x.get() < j2_s2_x_zeroPos_m.get() and j2_Stick_2_Detct_y.get() > j2_s2_y_zeroPos_p.get():
 # left / up
             if not js2_stick2_kb_left.get() == "nil" and js2_Left_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_left_Hold_activ.get() == False and js2_stick2_kb_left_Hold_chk.get() == 0:
@@ -30846,7 +31273,7 @@ while app_running.get() == True:
                 js2_stick2_kb_down_pressed.set(True)
                 Press_virKey(js2_stick2_kb_down.get())
 
-        elif j2_Stick_2_x.get() > 0.5 and j2_Stick_2_y.get() > 0.5:
+        elif j2_Stick_2_Detct_x.get() > j2_s2_x_zeroPos_p.get() and j2_Stick_2_Detct_y.get() > j2_s2_y_zeroPos_p.get():
 # right / up
             if not js2_stick2_kb_right.get() == "nil" and js2_Right_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_right_Hold_activ.get() == False and js2_stick2_kb_right_Hold_chk.get() == 0:
@@ -30880,7 +31307,7 @@ while app_running.get() == True:
                 js2_stick2_kb_down_pressed.set(True)
                 Press_virKey(js2_stick2_kb_down.get())
 
-        elif j2_Stick_2_x.get() > 0.5:
+        elif j2_Stick_2_Detct_x.get() > j2_s2_x_zeroPos_p.get():
             if not js2_stick2_kb_right.get() == "nil" and js2_Right_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_right_Hold_activ.get() == False and js2_stick2_kb_right_Hold_chk.get() == 0:
                     js2_stick2_kb_right_Hold_activ.set(True)
@@ -30897,7 +31324,7 @@ while app_running.get() == True:
                 js2_stick2_kb_right_pressed.set(True)
                 Press_virKey(js2_stick2_kb_right.get())
 
-        elif j2_Stick_2_x.get() < -0.5:
+        elif j2_Stick_2_Detct_x.get() < j2_s2_x_zeroPos_m.get():
             if not js2_stick2_kb_left.get() == "nil" and js2_Left_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_left_Hold_activ.get() == False and js2_stick2_kb_left_Hold_chk.get() == 0:
                     js2_stick2_kb_left_Hold_activ.set(True)
@@ -30914,7 +31341,7 @@ while app_running.get() == True:
                 js2_stick2_kb_left_pressed.set(True)
                 Press_virKey(js2_stick2_kb_left.get())
 
-        elif j2_Stick_2_y.get() > 0.5:
+        elif j2_Stick_2_Detct_y.get() > j2_s2_y_zeroPos_p.get():
             if not js2_stick2_kb_down.get() == "nil" and js2_Down_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_down_Hold_activ.get() == False and js2_stick2_kb_down_Hold_chk.get() == 0:
                     js2_stick2_kb_down_Hold_activ.set(True)
@@ -30931,7 +31358,8 @@ while app_running.get() == True:
                 js2_stick2_kb_down_pressed.set(True)
                 Press_virKey(js2_stick2_kb_down.get())
 
-        elif j2_Stick_2_y.get() < -0.5:
+#        elif j2_Stick_2_y.get() < -0.5:
+        elif j2_Stick_2_Detct_y.get() < j2_s2_y_zeroPos_m.get():
             if not js2_stick2_kb_up.get() == "nil" and js2_Up_Hold_stick2.get() == True: # Hold mode
                 if js2_stick2_kb_up_Hold_activ.get() == False and js2_stick2_kb_up_Hold_chk.get() == 0:
                     js2_stick2_kb_up_Hold_activ.set(True)
