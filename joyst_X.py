@@ -19511,7 +19511,7 @@ def re_j1_BTicons():
     if not js1_MAIN_Button4.get() == "nil" or not js1_C1_Button4.get() == "nil" or not js1_C2_Button4.get() == "nil" or not js1_C3_Button4.get() == "nil" or not js1_C4_Button4.get() == "nil" or not js1_C5_Button4.get() == "nil":
         kb_Button_7.configure(image=kb_ico_ac)
     else:
-        kb_Button_8.configure(image=kb_ico_nm)
+        kb_Button_7.configure(image=kb_ico_nm)
     if not js1_MAIN_Button5.get() == "nil" or not js1_C1_Button5.get() == "nil" or not js1_C2_Button5.get() == "nil" or not js1_C3_Button5.get() == "nil" or not js1_C4_Button5.get() == "nil" or not js1_C5_Button5.get() == "nil":
         kb_Button_8.configure(image=kb_ico_ac)
     else:
@@ -19671,7 +19671,7 @@ def re_j2_BTicons():
     if not js2_MAIN_Button4.get() == "nil" or not js2_C1_Button4.get() == "nil" or not js2_C2_Button4.get() == "nil" or not js2_C3_Button4.get() == "nil" or not js2_C4_Button4.get() == "nil" or not js2_C5_Button4.get() == "nil":
         kb_Button_7.configure(image=kb_ico_ac)
     else:
-        kb_Button_8.configure(image=kb_ico_nm)
+        kb_Button_7.configure(image=kb_ico_nm)
     if not js2_MAIN_Button5.get() == "nil" or not js2_C1_Button5.get() == "nil" or not js2_C2_Button5.get() == "nil" or not js2_C3_Button5.get() == "nil" or not js2_C4_Button5.get() == "nil" or not js2_C5_Button5.get() == "nil":
         kb_Button_8.configure(image=kb_ico_ac)
     else:
